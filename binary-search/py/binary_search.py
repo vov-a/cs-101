@@ -1,16 +1,16 @@
 def binary_search(list, item):
-  low = 0
-  high = len(list) - 1
+  left = 0
+  right = len(list) - 1
 
-  while low <= high:
-    mid = (low + high) // 2
+  while left <= right:
+    mid = (left + right) // 2
     guess = list[mid]
     if guess == item:
       return mid
-    if item < guess:
-      high = mid - 1
+    if item < right:
+      right = mid - 1
     else:
-      low = mid + 1
+      left = mid + 1
     
   return None
 
