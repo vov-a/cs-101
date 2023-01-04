@@ -1,8 +1,7 @@
-binsearch :: [Int] -> Int -> Int -> Int -> Int -- list, value, low, high, return int
-binsearch xs value low high
-   | high < low       = -1
-   | xs!!mid > value  = binsearch xs value low (mid-1)
-   | xs!!mid < value  = binsearch xs value (mid+1) high
-   | otherwise        = mid
-   where
-   mid = low + ((high - low) `div` 2)
+binSearch :: [Int] -> Int -> Int -> Int -> Int
+binSearch list item left right
+  | left > right      = -1
+  | item < list!!mid  = binSearch list item left (mid - 1)
+  | list!!mid < item  = binSearch list item (mid + 1) right
+  | otherwise         = mid
+   where mid = (left + right) `div` 2
