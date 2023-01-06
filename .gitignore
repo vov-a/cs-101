@@ -1,2 +1,6 @@
+.vscode/settings.json
+.vscode/tasks.json
+
 **/__pycache__
 **/.pytest_cache
+**/cpp/build/
