@@ -2,9 +2,10 @@ from array import *
 
 class Stack:
 
-  def __init__(self, type, size):
-    self.elements = array(type, size)
+  def __init__(self, type, init_value):
+    self.elements = array(type, init_value)
     self.counter = 0
+    self.capacity = len(init_value)
 
   def size(self):
     return self.counter
@@ -19,8 +20,11 @@ class Stack:
       return self.elements[-1]
   
   def push(self, data):
-    self.elements.append(data)
-    self.counter += 1
+    if self.counter != self.capacity:
+      self.elements.append(data)
+      self.counter += 1
+    else:
+      return None
 
   def pop(self):
     if self.empty():

@@ -28,3 +28,7 @@ def test_stack():
   assert myStack.empty() is True
   assert myStack.peek() is None
   assert myStack.pop() is None
+
+  myStack.push(11)
+  myStack.push(11)
+  assert myStack.push(11) is None
