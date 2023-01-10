@@ -12,6 +12,9 @@ class Stack:
 
   def empty(self):
     return self.counter == 0
+  
+  def full(self):
+    return self.counter == self.capacity
 
   def peek(self):
     if self.empty():
@@ -20,7 +23,7 @@ class Stack:
       return self.elements[-1]
   
   def push(self, data):
-    if self.counter != self.capacity:
+    if not self.full():
       self.elements.append(data)
       self.counter += 1
     else:
