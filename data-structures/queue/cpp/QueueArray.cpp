@@ -1,6 +1,6 @@
 #include <iostream>
 
-class Queue
+class QueueArray
 {
 private:
   int *arr;
@@ -11,7 +11,7 @@ private:
 
 public:
 
-  Queue(int size)
+  QueueArray(int size)
   {
     arr = new int[size];
     capacity = 3;
@@ -67,7 +67,7 @@ public:
 
 int main()
 {
-  Queue myQueue(3);
+  QueueArray myQueue(3);
 
   std::cout << myQueue.size() << std::endl;
   std::cout << myQueue.isEmpty() << std::endl;
